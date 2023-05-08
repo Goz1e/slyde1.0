@@ -1,0 +1,26 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+  <!-- Modal -->
+  <div class="modal fade " id="login_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Enter username | Room name</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="d-flex-col w-100 mx-auto">
+                <p class="lead">login form</p>
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    {{login_form|crispy}}
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">login</button>
+                </form>
+                <p class="mt-5 mb-3 text-muted">&copy; gozie</p>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

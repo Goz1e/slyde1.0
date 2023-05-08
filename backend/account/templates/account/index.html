@@ -1,0 +1,27 @@
+{% extends 'account/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<main class="container">
+    <div class=" h-100 justify-content-center my-auto text-center">
+        <h1 class="fw-normal mt-5 pt-5">slyde</h1>
+        <p class="lead">keep the convo <strike>personal</strike> private!</p>
+    
+        <div class="d-flex-row">
+            <div class="flex-col my-3">
+                <a class="btn btn-sm btn-outline-dark mx-1" href="{% url 'login' %}" role="button">login</a>
+                <a class="btn btn-sm btn-outline-dark mx-1" href="{% url 'signup' %}" role="button">signup</a>
+            </div>
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Generate random room
+            </button>
+        </div>
+    </div>
+</main> 
+  
+{% include 'account/display_name_modal.html' %}
+
+{% endblock %}
+
+
+  
+  

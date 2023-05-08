@@ -1,0 +1,20 @@
+body{
+    /* background-color: teal; */
+    height: 100vh !important;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width:100vw;
+}
+
+#nav{
+    position:fixed;
+    top:0;
+}
+
+#foot{
+    position:fixed;
+    bottom:0;
+}

@@ -1,0 +1,37 @@
+// create room link (pop-up page)
+// notiferjs for notification
+// account settins page
+// modify members and request page with bootstrap collapse
+
+// ASYNC 
+// async message delete
+
+// HOST
+
+Room logic : 
+
+Private Room(
+    non-members cannot-view == django view guardian
+    settings page(
+        update form = owner_only
+        make and revoke admin = owner_only
+        manage requests and members = admins and owner
+    )
+)
+
+
+Aim : get author from different source, rather than msg.author
+
+how (
+    generate random room view :
+
+    takes room_name and display_name:
+    room is created
+    display_name is stored in session.
+    if user is not authenticated:
+        display_name is used to create message
+)
+
+action (
+    create form and use it to assign display_name
+)

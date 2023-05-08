@@ -1,0 +1,60 @@
+{% extends 'account/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block stylesheet %}
+<link href="{% static 'chat/dashboard.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky sidebar-sticky  pb-5 mb-5">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <span data-feather="home" class="align-text-bottom"></span>
+                        <strong>Rooms: </strong>
+                    </a>
+                </li>
+                {% if rooms %}
+                {% for room in rooms %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'room' room_id=room.room_id %}">
+                        <span data-feather="file" class="align-text-bottom"></span>
+                        {{room.name}}
+                    </a>
+                </li>
+                {% endfor %}
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span data-feather="file" class="align-text-bottom"></span>
+                        <strong>No rooms yet </strong>
+                    </a>
+                </li>
+                {% endif %}
+                
+                <br><br><br><br>
+            </ul>
+    
+            </div>
+        </nav>
+  
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-5 my-4 mt-5 ">
+            <p class="lead">Create an instant Room</p>
+            <p class="small"> registered users can create and join private rooms</p> 
+            <p class="small">room admin pridvilages | manage admins if roon owner</p>            
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                create room
+            </button>
+            <br><br><br><br>
+            <p class="small">room name, privacy settings, and admin actions can be changed in room settings</p>            
+        </main>
+    </div>
+
+</div>
+{% include 'chat/create_room_modal.html' %}
+
+{% endblock %}
+{% block scripts %}
+{% endblock %}

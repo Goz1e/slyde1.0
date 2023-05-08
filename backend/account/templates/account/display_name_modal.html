@@ -1,0 +1,31 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+  <!-- Modal -->
+  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Enter username | Room name</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="d-flex" action="{% url 'anon_room' %}" method="get">
+                <!-- <input class="form-control rounded-5" name="dp_name" type="search" placeholder="keep it civil"> -->
+                <div class="row g-3">
+                    <div class="col-sm">
+                      <input type="text" class="form-control" name="dp_name" placeholder="display name" aria-label="Display name">
+                    </div>
+                    <div class="col-sm">
+                      <input type="text" class="form-control" name="room_name" placeholder="room name" aria-label="Room name">
+                    </div>
+                    <div class="col-sm">
+                        <button type="submit row" class="btn btn-primary">submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </div>

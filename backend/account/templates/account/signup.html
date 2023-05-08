@@ -1,0 +1,17 @@
+{% extends 'account/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<main class="container mt-5 pt-5">
+  <div class="d-flex-col w-50 mx-auto">
+      <p class="lead">signup</p>
+      <form action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+          {{signup_form|crispy}}
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      </form>
+      <p class="mt-5 mb-3 text-muted">&copy; gozie</p>
+  </div>
+</main>
+  
+{% endblock %}
